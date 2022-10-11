@@ -14,7 +14,7 @@ if (quantityShip.includes(1)) {
     document.querySelector("#button").display= false;
 }
 
-//Función para creación de tableros
+
 function createMatrix(boardType, matrixType, func, type) {
     for (let i = 0; i < 10; i++) {
         let list = []
@@ -32,7 +32,7 @@ function createMatrix(boardType, matrixType, func, type) {
         matrixType.push(list)
     }
 }
-//Función para seleccionar barco
+
 function selectShip(event) {
     shipData = event.target.className.split(" ");
     ship.position = shipData[0];
@@ -40,9 +40,9 @@ function selectShip(event) {
     ship.quantity = quantityShip[shipData[1]];
     ship.id = shipData[1];
 }
-//Creación de tablero jugador
+
 createMatrix(board, matrix, selectPosition, "player");
-//Creación de barcos
+
 for (let i = 0; i < position.length; i++) {
     let horizontal = document.createElement("div");
     position[i].appendChild(horizontal);
@@ -53,7 +53,7 @@ for (let i = 0; i < position.length; i++) {
     vertical.className = "vertical " + i;
     vertical.addEventListener("click", selectShip)
 }
-//Función para seleccionar posición de los barcos
+
 function selectPosition(event) {
     if (ship.quantity > 0) {
         let grid = event.target
@@ -94,13 +94,13 @@ function selectPosition(event) {
         alert("Debes seleccionar un barco disponible");
     }
 }
-//Función de botón iniciar juego
+
 function startGame() {
     createMatrix(boardAttack, matrixAttack, checkShot, "pc");
     selectPositionRandom()
     document.querySelector("#button").disabled = true;
 }
-//Generar posición random de barcos
+
 function selectPositionRandom() {
     for (let i = 0; i < quantityShipPC.length; i++) {
         while (quantityShipPC[i] > 0) {
@@ -109,7 +109,7 @@ function selectPositionRandom() {
         }
     }
 }
-//Verificación de posición válida
+
 function checkPosition(pos, axis, size) {
     if (shipRandom.position === pos) {
         if ((axis + (size - 1)) < 10) {
@@ -120,7 +120,7 @@ function checkPosition(pos, axis, size) {
         }
     }
 }
-//Función para crear barco random
+
 function random(i) {
     shipRandom.position = positionArray[Math.floor(Math.random() * Math.floor(positionArray.length))];
     shipRandom.x = Math.floor(Math.random() * Math.floor(10));
@@ -149,7 +149,7 @@ function random(i) {
         return random(i)
     }
 }
-//Verificar tiro de jugador
+
 function checkShot(event) {
     let grid = event.target
     let gridID = grid.id.split(",");
@@ -168,7 +168,7 @@ function checkShot(event) {
         shotPc()
     }
 }
-//Jugada del PC
+
 function shotPc() {
     let x = Math.floor(Math.random() * Math.floor(10));
     let y = Math.floor(Math.random() * Math.floor(10));
@@ -188,7 +188,7 @@ function shotPc() {
         document.getElementById(x + "," + y + "," + "player").className += " miss";
     }
 }
-//Revisar ganador
+
 function checkWinner(matrix, player) {
     for (let i = 0; i < 10; i++) {
         let arraychecked = matrix[i].filter((index) => { return index === "ship" })
