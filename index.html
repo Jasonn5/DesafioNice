@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <title>Batalla Naval</title>
+</head>
+
+<body>
+    <h1>Batalla Naval</h1>
+    <h3>Selecciona la posición de tus naves</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 pt-5">
+                <div class="row column">A</div>
+                <div class="row column">B</div>
+                <div class="row column">C</div>
+                <div class="row column">D</div>
+                <div class="row column">E</div>
+                <div class="row column">F</div>
+                <div class="row column">G</div>
+                <div class="row column">H</div>
+                <div class="row column">I</div>
+                <div class="row column">j</div>
+            </div>
+            <div class="col-md-4 pt-3">   
+                <div id="board">
+                    <div class="row text-center">
+                        <div class="col-md-1">1</div>
+                        <div class="col-md-1">2</div>
+                        <div class="col-md-1">3</div>
+                        <div class="col-md-1">4</div>
+                        <div class="col-md-1">5</div>
+                        <div class="col-md-1">6</div>
+                        <div class="col-md-1">7</div>
+                        <div class="col-md-1">8</div>
+                        <div class="col-md-1">9</div>
+                        <div class="col-md-1">10</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col -md-4">
+                <div id="boardAttack">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4>Tus naves:</h4>
+                <div id="ships" class="container">
+                    <div class="row pb-3">
+                        <div class="col">
+                            <span>Portaviones</span></br>
+                            <span >Tamaño: 5</span>
+                        </div>
+                        <div class="position col" id="aircraft-carrier"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col">
+                            <span>Acorazado</span></br>
+                            <span>Tamaño: 4</span>
+                        </div>
+                        <div class="position col" id="battleship"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col">
+                            <span>Crucero</span></br>
+                            <span>Tamaño: 3</span>
+                        </div>
+                        <div class="position col" id="cruise"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col">
+                            <span>Submarino</span></br>
+                            <span>Tamaño: 3</span>
+                        </div>
+                        <div class="position col" id="submarine"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col">
+                            <span>Destructor</span></br>
+                            <span>Tamaño: 2</span>
+                        </div>
+                        <div class="position col" id="destroyer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row button">
+            <button id="button" onclick="startGame()">Empezar juego</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
