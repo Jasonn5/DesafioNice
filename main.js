@@ -11,7 +11,7 @@ let ship = {};
 let shipRandom = {};
 
 if (quantityShip.includes(1)) {
-    document.querySelector("#button").display= false;
+    document.querySelector("#button").disabled= true;
 }
 
 
@@ -87,7 +87,7 @@ function selectPosition(event) {
             }
         }
         if (!quantityShip.includes(1)) {
-            document.querySelector("#button").display= true;
+            document.querySelector("#button").disabled= false;
         }
     }
     else {
