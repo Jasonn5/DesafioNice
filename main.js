@@ -33,16 +33,6 @@ function createMatrix(boardType, matrixType, func, type) {
     }
 }
 
-function selectShip(event) {
-    shipData = event.target.className.split(" ");
-    ship.position = shipData[0];
-    ship.size = sizeShip[shipData[1]];
-    ship.quantity = quantityShip[shipData[1]];
-    ship.id = shipData[1];
-}
-
-createMatrix(board, matrix, selectPosition, "player");
-
 for (let i = 0; i < position.length; i++) {
     let horizontal = document.createElement("div");
     position[i].appendChild(horizontal);
@@ -53,6 +43,17 @@ for (let i = 0; i < position.length; i++) {
     vertical.className = "vertical " + i;
     vertical.addEventListener("click", selectShip)
 }
+
+function selectShip(event) {
+    shipData = event.target.className.split(" ");
+    ship.position = shipData[0];
+    ship.size = sizeShip[shipData[1]];
+    ship.quantity = quantityShip[shipData[1]];
+    ship.id = shipData[1];
+}
+
+createMatrix(board, matrix, selectPosition, "player");
+
 
 function selectPosition(event) {
     if (ship.quantity > 0) {
